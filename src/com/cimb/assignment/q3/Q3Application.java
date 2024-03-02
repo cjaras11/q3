@@ -23,11 +23,13 @@ public class Q3Application {
 	
 	private void process(String staircaseAmount) throws Exception {
 		
-		validateData(staircaseAmount);
+		int iStaircaseAmount = validateData(staircaseAmount);
+		
+		System.out.println(countClimbWays(iStaircaseAmount));
 		
 	}
 	
-	private void validateData(String staircaseAmount) throws Exception {
+	private int validateData(String staircaseAmount) throws Exception {
 		
 		if (staircaseAmount == null || staircaseAmount.isBlank()) {
 			System.out.println("Staircase Amount cannot empty.");
@@ -45,7 +47,27 @@ public class Q3Application {
 		
 		if (iStaircaseAmount < 1 || iStaircaseAmount > 45) {
 			System.out.println("Staircase Amount must be a number between 1 and 45.");
+			throw new Exception("Invalid Data.");
 		}
+		
+		return iStaircaseAmount;
+	}
+	
+	private int countClimbWays(int staircaseAmount) {
+		
+		int count = 0;
+		
+		int maxStep = 2;
+		
+		for (int i = 2; i <= staircaseAmount; i++) {
+			
+			for (int j = 1; j <= maxStep; j++) {
+				
+			}
+			
+		}
+		
+		return count;
 	}
 
 }
